@@ -1,32 +1,31 @@
+// In file: app/src/main/java/com/codepath/nationalparks/NationalPark.kt
+
 package com.codepath.nationalparks
 
 import com.google.gson.annotations.SerializedName
 
-/**
- * The Model for storing a single park from the National Parks API.
- *
- * SerializedName tags MUST match the JSON response for the
- * object to correctly parse with the gson library.
- */
-class NationalPark {
+class NationalPark {    @JvmField
+@SerializedName("fullName")
+var name: String? = null
 
-    // Name field
-    @JvmField
-    @SerializedName("fullName")
-    var name: String? = null
-
-    // Description field
     @JvmField
     @SerializedName("description")
     var description: String? = null
 
-    // Location or State field
     @JvmField
     @SerializedName("states")
     var location: String? = null
 
-    //TODO parkImageUrl
+    @SerializedName("images")
+    var images: List<Image>? = null
 
+    // Convenience property to easily access the first image's URL
+    val imageUrl: String? get() = images?.firstOrNull()?.url
 
-    //TODO-STRETCH-GOALS
+    // Inner class to represent the nested image object in the JSON
+    class Image {
+        @SerializedName("url")
+        var url: String? = null
+    }
 }
+
