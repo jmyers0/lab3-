@@ -1,4 +1,4 @@
-Submitted by: Eleni Mekonnen
+Submitted by: Jaiden Myers
 
 Park Explorer is a simple Android app that allows users to scroll through a list of beautiful National Parks and learn more about each one.
 
